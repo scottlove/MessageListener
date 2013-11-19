@@ -10,11 +10,7 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.http.HttpRequestDecoder;
-
-
-
-
-
+import io.netty.handler.codec.http.HttpResponseEncoder;
 
 
 public class MessageServer {
@@ -56,6 +52,7 @@ public class MessageServer {
                             //ch.pipeline().addLast(new DiscardServerHandler());
 
                             ch.pipeline().addLast(new HttpRequestDecoder());
+                            ch.pipeline().addLast( new HttpResponseEncoder());
 
                             ch.pipeline().addLast(new MessageHandler());
 
