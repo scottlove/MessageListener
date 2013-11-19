@@ -9,8 +9,7 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.handler.codec.http.HttpRequestDecoder;
-import io.netty.handler.codec.http.HttpResponseEncoder;
+import io.netty.handler.codec.http.*;
 
 
 public class MessageServer {
@@ -49,10 +48,9 @@ public class MessageServer {
 
                         public void initChannel(SocketChannel ch) throws Exception {
 
-                            //ch.pipeline().addLast(new DiscardServerHandler());
 
-                            ch.pipeline().addLast(new HttpRequestDecoder());
-                            ch.pipeline().addLast( new HttpResponseEncoder());
+                            ch.pipeline().addLast( new HttpServerCodec());
+                            ch.pipeline().addLast( new HttpObjectAggregator(512*1024));
 
                             ch.pipeline().addLast(new MessageHandler());
 

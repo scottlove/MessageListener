@@ -44,24 +44,13 @@ public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
         try {
 
 
-            if (msg instanceof DefaultHttpRequest)
+            if (msg instanceof DefaultFullHttpRequest  )
+            //if (msg instanceof DefaultLastHttpContent  )
             {
-                DefaultHttpRequest request = (DefaultHttpRequest) msg;
+                //DefaultLastHttpContent  in =    (DefaultLastHttpContent )msg;
+                DefaultFullHttpRequest  in =    (DefaultFullHttpRequest )msg;
 
-
-                if (request.getDecoderResult().isSuccess() )
-                    System.out.println(request.getMethod().name()) ;
-                else
-                    System.out.println("request fail")   ;
-
-
-            }
-
-            if (msg instanceof DefaultLastHttpContent  )
-            {
-                DefaultLastHttpContent  in =    (DefaultLastHttpContent )msg;
-
-                System.out.print(in.content().toString(Charset.defaultCharset()));
+                System.out.println(in.getMethod().toString() +":" +in.content().toString(Charset.defaultCharset()));
 
 
                 StringBuilder buf = new StringBuilder();
