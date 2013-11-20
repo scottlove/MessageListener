@@ -15,6 +15,9 @@ import static io.netty.handler.codec.http.HttpResponseStatus.*;
 
 import java.nio.charset.Charset;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 
 /**
@@ -33,7 +36,7 @@ import java.nio.charset.Charset;
 
 public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
 
-
+    Logger logger = LogManager.getLogger();
 
     @Override
 
@@ -51,6 +54,8 @@ public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
                 DefaultFullHttpRequest  in =    (DefaultFullHttpRequest )msg;
 
                 System.out.println(in.getMethod().toString() +":" +in.content().toString(Charset.defaultCharset()));
+
+                logger.error("Did it again!");
 
 
                 StringBuilder buf = new StringBuilder();
