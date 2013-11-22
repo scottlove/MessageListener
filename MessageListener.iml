@@ -13,6 +13,7 @@
     <orderEntry type="library" name="log4j-core-2.0-beta9" level="project" />
     <orderEntry type="library" name="junit-4.11" level="project" />
     <orderEntry type="library" name="junit-4.10" level="application" />
+    <orderEntry type="module" module-name="Messages" />
   </component>
 </module>
 

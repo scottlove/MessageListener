@@ -10,6 +10,8 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.http.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 public class MessageServer {
@@ -17,12 +19,13 @@ public class MessageServer {
 
 
     private int port;
+    private Logger logger ;
 
 
-
-    public MessageServer(int port) {
+    public MessageServer(int port, Logger logger) {
 
         this.port = port;
+        this.logger = logger;
 
     }
 
@@ -33,6 +36,7 @@ public class MessageServer {
         EventLoopGroup bossGroup = new NioEventLoopGroup(); // (1)
 
         EventLoopGroup workerGroup = new NioEventLoopGroup();
+
 
         try {
 
@@ -52,7 +56,7 @@ public class MessageServer {
                             ch.pipeline().addLast( new HttpServerCodec());
                             ch.pipeline().addLast( new HttpObjectAggregator(512*1024));
 
-                            ch.pipeline().addLast(new MessageHandler());
+                            ch.pipeline().addLast(new MessageHandler(logger));
 
                         }
 
@@ -95,7 +99,9 @@ public class MessageServer {
         } else {
             port = 8080;
         }
-        new MessageServer(port).run();
+
+        Logger logger= LogManager.getLogger() ;
+        new MessageServer(port,logger).run();
     }
 
 }
