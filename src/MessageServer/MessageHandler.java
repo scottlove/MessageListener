@@ -1,9 +1,9 @@
 package MessageServer;
 
 import Messages.IMessage;
-import Messages.IMessageSender;
 import Messages.MessageFactory;
-import Messages.MessageSenderFactory;
+import Producer.IProducer;
+import Producer.producerFactory;
 import io.netty.buffer.ByteBuf;
 
 
@@ -24,24 +24,12 @@ import org.apache.logging.log4j.Logger;
 
 
 
-/**
 
- * Created with IntelliJ IDEA.
-
- * User: scotlov
-
- * Date: 11/15/13
-
- * Time: 11:25 AM
-
- * To change this template use File | Settings | File Templates.
-
- */
 
 public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
 
     private static MessageFactory mf = new MessageFactory() ;
-    private static MessageSenderFactory msf = new MessageSenderFactory()   ;
+    private static producerFactory kafkaProducer = new producerFactory()   ;
 
     private Logger logger ;
 
@@ -109,10 +97,10 @@ public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
 
 
                 IMessage payload = parseMessage(in.content().toString(Charset.defaultCharset())) ;
-                IMessageSender ms =   msf.getSender() ;
+                IProducer ms =   kafkaProducer.getProducer() ;
 
                 String serverMsg;
-                if (ms.sendMessage(payload))
+                if (ms.send(payload))
                 {
                     serverMsg = buildReturnMessage("message received")  ;
                     logger.debug(payload.getContent().toString());

@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class BasicMessageTest {
     private String testID;
@@ -33,7 +33,7 @@ public class BasicMessageTest {
 
     @Test
     public void testGetMessageID() throws Exception {
-                  assertEquals(testID,message.getMessageID()) ;
+                  assertTrue(testID,message.getMessageID().length()>10) ;
     }
 
     @Test
