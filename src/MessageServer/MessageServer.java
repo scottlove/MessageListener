@@ -13,6 +13,12 @@ import io.netty.handler.codec.http.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.nio.charset.Charset;
+import java.util.Enumeration;
+import java.util.Iterator;
+import java.util.Properties;
+import java.util.Set;
+
 
 public class MessageServer {
 
@@ -53,8 +59,8 @@ public class MessageServer {
                         public void initChannel(SocketChannel ch) throws Exception {
 
 
-                            ch.pipeline().addLast( new HttpServerCodec());
-                            ch.pipeline().addLast( new HttpObjectAggregator(512*1024));
+                           ch.pipeline().addLast( new HttpServerCodec());
+                           ch.pipeline().addLast( new HttpObjectAggregator(512*1024));
 
                             ch.pipeline().addLast(new MessageHandler(logger));
 
@@ -101,6 +107,25 @@ public class MessageServer {
         }
 
         Logger logger= LogManager.getLogger() ;
+
+        ApplicationProperties ap = new ApplicationProperties()  ;
+
+
+        Properties p = ap.getProperties() ;
+        Set v = p.keySet();
+        Iterator itr = v.iterator();
+        String str;
+        while (itr.hasNext())
+        {
+            str = (String)itr.next()  ;
+            String val = p.getProperty(str) ;
+            System.out.println(str + ":"+ val);
+
+        }
+
+
+
+        //System.out.println(ap.getProperties() );
         new MessageServer(port,logger).run();
     }
 

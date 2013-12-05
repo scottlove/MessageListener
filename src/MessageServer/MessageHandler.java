@@ -86,7 +86,8 @@ public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
      @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) { // (2)    ByteBuf in = (ByteBuf) msg;
 
-        try {
+          int u =5;
+         try {
 
 
             if (msg instanceof DefaultFullHttpRequest  )
@@ -100,7 +101,8 @@ public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
                 IProducer ms =   kafkaProducer.getProducer() ;
 
                 String serverMsg;
-                if (ms.send(payload))
+               //if (ms.send(payload))
+                if (true)
                 {
                     serverMsg = buildReturnMessage("message received")  ;
                     logger.debug(payload.getContent().toString());
