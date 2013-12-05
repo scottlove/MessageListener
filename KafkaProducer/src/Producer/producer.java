@@ -25,7 +25,7 @@ public class producer implements IProducer{
 
     private void sendTraceData(IMessage m)
     {
-        //KeyedMessage<String, String> data = new KeyedMessage<String, String>("TRACE", m.getMessageID(), producerUtils.buildOutTrace(m));
+
         KeyedMessage<String, String> data   = buildKeyedMessage("TRACE", m.getMessageID(), producerUtils.buildOutTrace(m))  ;
 
 
