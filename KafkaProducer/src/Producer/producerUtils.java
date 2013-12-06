@@ -35,15 +35,12 @@ public class producerUtils {
     public static String buildOutString(IMessage m)
     {
         StringBuilder o = new StringBuilder()   ;
-        ArrayList content = (ArrayList) m.getContent();
+        String content =  m.getMessage();
 
         o.append(m.getMessageID()) ;
         o.append(":")  ;
-        for(int i = 0;i<content.size();i++)
-        {
-            o.append(content.get(i))  ;
-            o.append(":")  ;
-        }
+        o.append(m.getMessage())   ;
+
 
         return o.toString()  ;
     }

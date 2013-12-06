@@ -6,7 +6,7 @@ import java.util.UUID;
 
 public class BasicMessage implements IMessage <String>{
     private String ID;
-    private ArrayList<String> content;
+    private String message;
     private String topic;
 
     private String createUniqueID  ()
@@ -15,7 +15,7 @@ public class BasicMessage implements IMessage <String>{
     }
 
     public BasicMessage(String topic) {
-        content = new ArrayList<String>() ;
+        message = "" ;
         this.ID = createUniqueID();
         this.topic = topic;
     }
@@ -32,12 +32,12 @@ public class BasicMessage implements IMessage <String>{
     }
 
     @Override
-    public ArrayList<String> getContent() {
-        return content;
+    public String getMessage() {
+        return message;
     }
 
     @Override
-    public void addContent(String c) {
-        content.add(c)       ;
+    public void addMessage(String c) {
+        message = c    ;
     }
 }

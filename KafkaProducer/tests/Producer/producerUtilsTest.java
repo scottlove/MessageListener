@@ -21,7 +21,7 @@ public class producerUtilsTest {
 
 
         m = new BasicMessage(testTopic)  ;
-        m.addContent(testContent)  ;
+        m.addMessage(testContent);  ;
     }
 
 

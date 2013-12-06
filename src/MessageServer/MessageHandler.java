@@ -37,19 +37,37 @@ public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
         this.logger = logger;
     }
 
-    private IMessage parseMessage(String msg) throws IndexOutOfBoundsException
+    public IMessage parseMessage(String msg) throws IndexOutOfBoundsException
     {
 
+        //TOPIC=topic&MSG=message
              IMessage parsedMessage;
-             String [] split = msg.split(":") ;
+             String [] comp = msg.split("&") ;
+             String topic = "";
+             String message ="";
+             boolean validMSG = false;
 
-             if (split.length > 1)
+
+             if (comp.length == 2)
              {
-                 parsedMessage = mf.createNewMessage(split[0]) ;
-                 for (int i = 1; i< split.length;i++) {
-                    parsedMessage.addContent(split[i]);
-
+                 String [] tp = comp[0].split("=")  ;
+                 if (tp[0].equals("TOPIC") && tp.length==2)
+                 {
+                      topic = tp[1]  ;
+                     String [] m = comp[1].split("=")  ;
+                     if (m[0].equals("MSG") && m.length==2)
+                     {
+                         message = m[1]  ;
+                         validMSG = true;
+                     }
                  }
+             }
+             if (validMSG)
+             {
+
+                 parsedMessage = mf.createNewMessage(topic) ;
+                 parsedMessage.addMessage(message);
+
              }
              else
              {
@@ -97,15 +115,32 @@ public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
                 DefaultFullHttpRequest  in =    (DefaultFullHttpRequest )msg;
 
 
-                IMessage payload = parseMessage(in.content().toString(Charset.defaultCharset())) ;
+                ByteBuf b = in.content()     ;
+
+                StringBuilder  sb = new StringBuilder() ;
+                if (!b.hasArray()) {
+
+
+
+
+                    while(b.isReadable())
+                    {
+                        sb.append((char)b.readByte()) ;
+                        //System.out.println(b.readByte())   ;
+                    }
+
+                    System.out.println(sb.toString());
+
+               }
+                IMessage payload = parseMessage(sb.toString()) ;
                 IProducer ms =   kafkaProducer.getProducer() ;
 
                 String serverMsg;
-               //if (ms.send(payload))
-                if (true)
+                if (ms.send(payload))
+               // if (true)
                 {
                     serverMsg = buildReturnMessage("message received")  ;
-                    logger.debug(payload.getContent().toString());
+                    logger.debug(payload.getMessage().toString());
                 }
                 else
                 {

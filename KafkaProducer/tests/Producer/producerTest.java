@@ -27,7 +27,7 @@ public class producerTest {
         BasicMessage message = new BasicMessage("testID")  ;
         for (String s : testContent)
         {
-            message.addContent(s)     ;
+            message.addMessage(s);     ;
         }
 
         p.send(message);
