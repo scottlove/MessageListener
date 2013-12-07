@@ -26,12 +26,14 @@ public class MessageServer {
 
     private int port;
     private Logger logger ;
+    String brokerList;
 
 
-    public MessageServer(int port, Logger logger) {
+    public MessageServer(int port, Logger logger,String brokerList) {
 
         this.port = port;
         this.logger = logger;
+        this.brokerList = brokerList;
 
     }
 
@@ -62,7 +64,7 @@ public class MessageServer {
                            ch.pipeline().addLast( new HttpServerCodec());
                            ch.pipeline().addLast( new HttpObjectAggregator(512*1024));
 
-                            ch.pipeline().addLast(new MessageHandler(logger));
+                            ch.pipeline().addLast(new MessageHandler(logger,brokerList));
 
                         }
 
@@ -100,33 +102,24 @@ public class MessageServer {
 
     public static void main(String[] args) throws Exception {
         int port;
+        String brokerList;
+        ApplicationProperties ap = new ApplicationProperties()  ;
+        Properties p = ap.getProperties()  ;
+
         if (args.length > 0) {
             port = Integer.parseInt(args[0]);
         } else {
-            port = 8080;
+            port = Integer.parseInt( p.getProperty("port") ) ;
         }
 
+        brokerList = p.getProperty("metadata.broker.list")   ;
         Logger logger= LogManager.getLogger() ;
 
-        ApplicationProperties ap = new ApplicationProperties()  ;
-
-
-        Properties p = ap.getProperties() ;
-        Set v = p.keySet();
-        Iterator itr = v.iterator();
-        String str;
-        while (itr.hasNext())
-        {
-            str = (String)itr.next()  ;
-            String val = p.getProperty(str) ;
-            System.out.println(str + ":"+ val);
-
-        }
 
 
 
-        //System.out.println(ap.getProperties() );
-        new MessageServer(port,logger).run();
+
+        new MessageServer(port,logger,brokerList).run();
     }
 
 }

@@ -2,12 +2,29 @@ package MessageServer;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.Before;
-import org.junit.Test;
+
+import java.util.Properties;
+
 
 public class MessageServerTest {
+
+
+    int port;
+    String host;
+    Logger logger;
+
     @org.junit.Before
     public void setUp() throws Exception {
+
+
+        ApplicationProperties ap = new ApplicationProperties()  ;
+        Properties p = ap.getProperties() ;
+        host = p.getProperty("nettyhost")  ;
+        port =   Integer.parseInt(p.getProperty("nettyport") ) ;
+
+        logger= LogManager.getLogger() ;
+
+
 
     }
 
@@ -18,17 +35,9 @@ public class MessageServerTest {
 
     @org.junit.Test
     public void testRun() throws Exception {
-        int port = 8080;
-//        if (args.length > 0) {
-//            port = Integer.parseInt(args[0]);
-//        } else {
-//            port = 8080;
-//        }
 
-        String host = "127.0.0.1"   ;
-        Logger logger= LogManager.getLogger() ;
 
-        MessageServer msg = new MessageServer(port,host,logger)   ;
+        PostMessageSender msg = new PostMessageSender(port,host,logger)   ;
         msg.run();
     }
 }

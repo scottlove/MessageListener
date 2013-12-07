@@ -1,35 +1,29 @@
 package MessageServer;
 
 import io.netty.bootstrap.Bootstrap;
-import io.netty.bootstrap.ServerBootstrap;
-import io.netty.buffer.ByteBuf;
-import io.netty.buffer.Unpooled;
+
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
-import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.http.*;
 import io.netty.handler.codec.http.multipart.DefaultHttpDataFactory;
 import io.netty.handler.codec.http.multipart.HttpDataFactory;
 import io.netty.handler.codec.http.multipart.HttpPostRequestEncoder;
-import io.netty.handler.codec.http.multipart.InterfaceHttpData;
+
 import org.apache.logging.log4j.Logger;
 
-import java.io.File;
+
 import java.net.InetSocketAddress;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.nio.charset.Charset;
-import java.util.List;
-import java.util.Map;
-import java.util.logging.Level;
 
 
-public class MessageServer {
+
+public class PostMessageSender {
 
 
 
@@ -38,7 +32,7 @@ public class MessageServer {
     private Logger logger ;
 
 
-    public MessageServer(int port,String host,Logger logger) {
+    public PostMessageSender(int port, String host, Logger logger) {
 
         this.host = host;
         this.port = port;
@@ -48,33 +42,6 @@ public class MessageServer {
 
 
 
-
-//    public void run() throws Exception {
-//        EventLoopGroup group = new NioEventLoopGroup();
-//        try {
-//
-//            ServerBootstrap b = new ServerBootstrap();
-//            b.group(group)
-//                    .channel(NioServerSocketChannel.class)
-//                    .localAddress(new InetSocketAddress(port))
-//                    .childHandler(new ChannelInitializer<SocketChannel>() {
-//                        @Override
-//                        public void initChannel(SocketChannel ch)     throws Exception {
-//                            ch.pipeline().addLast(
-//                                    new EchoServerHandler());
-//                        }
-//                    });
-//            ChannelFuture f = b.bind().sync();
-//            System.out.println(MessageServer.class.getName() +  "started and listen on “"+ f.channel().localAddress());
-//            f.channel().closeFuture().sync();
-//        }
-//
-//        finally {
-//            group.shutdownGracefully().sync();
-//        }
-//
-//
-//    }
 
     public void setContent()
     {
@@ -112,21 +79,11 @@ public class MessageServer {
             e.printStackTrace();
         }
 
-//
-//        // it is legal to add directly header or cookie into the request until finalize
-//        for (Map.Entry<String, String> entry : headers) {
-//            request.headers().set(entry.getKey(), entry.getValue());
-//        }
 
-
-        // add Form attribute
         try {
             bodyRequestEncoder.addBodyAttribute("TOPIC", "intTest");
             bodyRequestEncoder.addBodyAttribute("MSG", "first");
-            //bodyRequestEncoder.addBodyAttribute("secondinfo", "secondvalue");
-            //bodyRequestEncoder.addBodyAttribute("thirdinfo", textArea);
-            //bodyRequestEncoder.addBodyFileUpload("myfile", file, "application/x-zip-compressed", false);
-            //bodyRequestEncoder.addBodyAttribute("Send", "Send");
+
 
         } catch (NullPointerException e) {
             // should not be since not null args
@@ -200,21 +157,6 @@ public class MessageServer {
         ChannelFuture f = b.connect().sync();
 
 
-//
-//                URI uri = new URI("localhost:8080");
-//                String scheme = uri.getScheme() == null? "http" : uri.getScheme();
-//                String host = uri.getHost() == null? "localhost" : uri.getHost();
-//                ByteBuf buf = Unpooled.copiedBuffer("topic1:test", Charset.defaultCharset())  ;
-//
-//            DefaultFullHttpRequest request =    new DefaultFullHttpRequest( HttpVersion.HTTP_1_1, HttpMethod.POST, uri.toASCIIString(),buf);
-            //HttpPostRequestEncoder p = new HttpPostRequestEncoder(request,false) ;
-            //HttpRequest h = p.finalizeRequest() ;
-
-
-
-
-
-
             String postSimple = "http://127.0.0.1:8080";
             URI uriSimple;
             try {
@@ -238,7 +180,7 @@ public class MessageServer {
             formPost(b,"localhost",port,uriSimple);
 
 
-        System.out.println(MessageServer.class.getName() +  "started and listen on “"+ f.channel().localAddress());
+        System.out.println(PostMessageSender.class.getName() +  "started and listen on “"+ f.channel().localAddress());
         //f.channel().closeFuture().sync();
      }
     finally {

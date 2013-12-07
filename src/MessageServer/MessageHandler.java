@@ -29,12 +29,14 @@ import org.apache.logging.log4j.Logger;
 public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
 
     private static MessageFactory mf = new MessageFactory() ;
-    private static producerFactory kafkaProducer = new producerFactory()   ;
+    private static producerFactory kafkaProducerFactory = new producerFactory()   ;
 
     private Logger logger ;
+    private String brokerList;
 
-    public MessageHandler(Logger logger) {
+    public MessageHandler(Logger logger,String brokerList) {
         this.logger = logger;
+        this.brokerList = brokerList;
     }
 
     public IMessage parseMessage(String msg) throws IndexOutOfBoundsException
@@ -133,7 +135,7 @@ public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
 
                }
                 IMessage payload = parseMessage(sb.toString()) ;
-                IProducer ms =   kafkaProducer.getProducer() ;
+                IProducer ms =   kafkaProducerFactory.getProducer(brokerList) ;
 
                 String serverMsg;
                 if (ms.send(payload))

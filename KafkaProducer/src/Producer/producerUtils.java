@@ -3,6 +3,8 @@ package Producer;
 import Messages.IMessage;
 
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
@@ -24,7 +26,34 @@ public class producerUtils {
     {
         StringBuilder o = new StringBuilder()   ;
 
+        String module = "messageListener";
 
+        String hostName  ;
+        try
+        {
+            hostName = InetAddress.getLocalHost().getHostName();
+        }
+        catch(UnknownHostException e)
+        {
+            hostName ="unknown host"  ;
+        }
+        String ip ;
+        try
+        {
+            ip = InetAddress.getLocalHost().getHostAddress();
+        }
+        catch(UnknownHostException e)
+        {
+            ip ="unknown ip"  ;
+        }
+
+
+        o.append(module) ;
+        o.append(":")  ;
+        o.append(hostName) ;
+        o.append(":")  ;
+        o.append(ip) ;
+        o.append(":")  ;
         o.append(m.getMessageID()) ;
         o.append(":")  ;
         o.append(getTimeStamp().toString());
@@ -35,12 +64,11 @@ public class producerUtils {
     public static String buildOutString(IMessage m)
     {
         StringBuilder o = new StringBuilder()   ;
-        String content =  m.getMessage();
+
 
         o.append(m.getMessageID()) ;
         o.append(":")  ;
         o.append(m.getMessage())   ;
-
 
         return o.toString()  ;
     }

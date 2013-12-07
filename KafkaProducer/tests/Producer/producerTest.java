@@ -1,22 +1,29 @@
 package Producer;
 
 import Messages.BasicMessage;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
+import java.io.InputStream;
 import java.util.ArrayList;
-
-
-
+import java.util.Properties;
 
 
 public class producerTest {
-   @Test
+    @Ignore("Only run this when kafka is running")
+    @Test
     public void testSend() throws Exception {
         //producer p = new producer();
 
-        IProducer p =producerFactory.getProducer()  ;
+
+       Properties defaultProps = new Properties();
+       InputStream in = this.getClass().getResourceAsStream("app.properties");
+       defaultProps.load(in);
+       String brokers = defaultProps.getProperty("metadata.broker.list")  ;
+       IProducer p = producerFactory.getProducer(brokers)  ;
+
 
         ArrayList<String>  testContent = new ArrayList<String>()  ;
         String testID = "testID";
