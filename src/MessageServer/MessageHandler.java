@@ -113,7 +113,7 @@ public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
             if (msg instanceof DefaultFullHttpRequest  )
             //if (msg instanceof DefaultLastHttpContent  )
             {
-                //DefaultLastHttpContent  in =    (DefaultLastHttpContent )msg;
+
                 DefaultFullHttpRequest  in =    (DefaultFullHttpRequest )msg;
 
 
@@ -122,13 +122,9 @@ public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
                 StringBuilder  sb = new StringBuilder() ;
                 if (!b.hasArray()) {
 
-
-
-
                     while(b.isReadable())
                     {
                         sb.append((char)b.readByte()) ;
-                        //System.out.println(b.readByte())   ;
                     }
 
                     System.out.println(sb.toString());
@@ -139,7 +135,6 @@ public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
 
                 String serverMsg;
                 if (ms.send(payload))
-               // if (true)
                 {
                     serverMsg = buildReturnMessage("message received")  ;
                     logger.debug(payload.getMessage().toString());

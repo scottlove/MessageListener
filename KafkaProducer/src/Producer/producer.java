@@ -44,9 +44,16 @@ public class producer implements IProducer{
     public Boolean send(IMessage m) {
 
         String msg = producerUtils.buildOutString(m)  ;
-        //KeyedMessage<String, String> data = new KeyedMessage<String, String>(m.getTopic(), m.getMessageID(), msg);
         KeyedMessage<String, String> data   = buildKeyedMessage(m.getTopic(), m.getMessageID(), msg)  ;
-        producer.send(data);
+        try
+        {
+            producer.send(data);
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+
         sendTraceData(m);
 
 
