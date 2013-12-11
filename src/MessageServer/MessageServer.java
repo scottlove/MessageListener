@@ -82,11 +82,6 @@ public class MessageServer {
 
 
 
-            // Wait until the server socket is closed.
-
-            // In this example, this does not happen, but you can do that to gracefully
-
-            // shut down your server.
 
             f.channel().closeFuture().sync();
 
@@ -114,8 +109,6 @@ public class MessageServer {
 
         brokerList = p.getProperty("metadata.broker.list")   ;
         Logger logger= LogManager.getLogger() ;
-
-
 
 
 

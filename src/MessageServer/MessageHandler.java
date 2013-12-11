@@ -42,7 +42,7 @@ public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
     public IMessage parseMessage(String msg) throws IndexOutOfBoundsException
     {
 
-        //TOPIC=topic&MSG=message
+
              IMessage parsedMessage;
              String [] comp = msg.split("&") ;
              String topic = "";
@@ -131,7 +131,7 @@ public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
 
                }
                 IMessage payload = parseMessage(sb.toString()) ;
-                IProducer ms =   kafkaProducerFactory.getProducer(brokerList) ;
+                IProducer ms =   kafkaProducerFactory.getProducer(brokerList,logger) ;
 
                 String serverMsg;
                 if (ms.send(payload))

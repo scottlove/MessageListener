@@ -1,6 +1,8 @@
 package Producer;
 
 import Messages.BasicMessage;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -15,14 +17,14 @@ public class producerTest {
     @Ignore("Only run this when kafka is running")
     @Test
     public void testSend() throws Exception {
-        //producer p = new producer();
 
 
+       Logger logger= LogManager.getLogger() ;
        Properties defaultProps = new Properties();
        InputStream in = this.getClass().getResourceAsStream("app.properties");
        defaultProps.load(in);
        String brokers = defaultProps.getProperty("metadata.broker.list")  ;
-       IProducer p = producerFactory.getProducer(brokers)  ;
+       IProducer p = producerFactory.getProducer(brokers,logger)  ;
 
 
         ArrayList<String>  testContent = new ArrayList<String>()  ;

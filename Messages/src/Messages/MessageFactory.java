@@ -3,7 +3,7 @@ package Messages;
 
 public class MessageFactory {
 
-   public IMessage createNewMessage(String topic)
+   public static IMessage createNewMessage(String topic)
    {
        return new BasicMessage(topic)   ;
    }
