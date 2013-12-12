@@ -7,21 +7,21 @@ import kafka.javaapi.producer.Producer   ;
 
 
 import java.util.Properties;
-
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 public class producer implements IProducer{
 
     private ProducerConfig config  ;
     private Producer<String, String> producer   ;
-    private org.apache.logging.log4j.Logger logger;
+    private Logger logger;
 
     public producer (Properties p, org.apache.logging.log4j.Logger logger)
     {
         config = new ProducerConfig(p)  ;
         producer = new Producer<String, String>(config);
-        this.logger = logger;
+        this.logger = LogManager.getLogger(producer.class.getName());
     }
 
     private void sendTraceData(IMessage m)

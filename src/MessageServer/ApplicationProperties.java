@@ -10,7 +10,6 @@ public class ApplicationProperties {
     public Properties getProperties() throws Exception
     {
         Properties defaultProps = new Properties();
-        //InputStream in = this.getClass().getResourceAsStream( "app.properties" );
         FileInputStream in = new FileInputStream("app.properties")      ;
         defaultProps.load(in);
         in.close();

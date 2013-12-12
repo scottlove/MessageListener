@@ -20,6 +20,7 @@ import static io.netty.handler.codec.http.HttpResponseStatus.*;
 
 import java.nio.charset.Charset;
 
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
@@ -34,8 +35,8 @@ public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
     private Logger logger ;
     private String brokerList;
 
-    public MessageHandler(Logger logger,String brokerList) {
-        this.logger = logger;
+    public MessageHandler(String brokerList) {
+        logger = LogManager.getLogger(MessageHandler.class.getName());
         this.brokerList = brokerList;
     }
 
@@ -73,7 +74,7 @@ public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
              }
              else
              {
-                 logger.error("invalid msg received");
+                 logger.warn("parseMessage: invalid msg received");
                  throw new IndexOutOfBoundsException("invalid message") ;
              }
 
@@ -106,10 +107,10 @@ public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
      @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) { // (2)    ByteBuf in = (ByteBuf) msg;
 
-          int u =5;
+         int u =5;
          try {
 
-
+            logger.info("starting channel read")   ;
             if (msg instanceof DefaultFullHttpRequest  )
             //if (msg instanceof DefaultLastHttpContent  )
             {

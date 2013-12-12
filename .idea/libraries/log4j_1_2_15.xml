@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="log4j-1.2.15">
+    <CLASSES>
+      <root url="jar://C:/Dev/Lib/kafka_2.8.0-0.8.0-beta1/libs/log4j-1.2.15.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

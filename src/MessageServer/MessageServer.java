@@ -25,14 +25,13 @@ public class MessageServer {
 
 
     private int port;
-    private Logger logger ;
+    private static Logger logger ;
     String brokerList;
 
 
-    public MessageServer(int port, Logger logger,String brokerList) {
+    public MessageServer(int port, String brokerList) {
 
         this.port = port;
-        this.logger = logger;
         this.brokerList = brokerList;
 
     }
@@ -64,7 +63,7 @@ public class MessageServer {
                            ch.pipeline().addLast( new HttpServerCodec());
                            ch.pipeline().addLast( new HttpObjectAggregator(512*1024));
 
-                            ch.pipeline().addLast(new MessageHandler(logger,brokerList));
+                           ch.pipeline().addLast(new MessageHandler(brokerList));
 
                         }
 
@@ -101,6 +100,7 @@ public class MessageServer {
         ApplicationProperties ap = new ApplicationProperties()  ;
         Properties p = ap.getProperties()  ;
 
+
         if (args.length > 0) {
             port = Integer.parseInt(args[0]);
         } else {
@@ -108,11 +108,14 @@ public class MessageServer {
         }
 
         brokerList = p.getProperty("metadata.broker.list")   ;
-        Logger logger= LogManager.getLogger() ;
+
+        logger = LogManager.getLogger(MessageServer.class.getName());
+
+        logger.info("Starting Message Server")        ;
 
 
 
-        new MessageServer(port,logger,brokerList).run();
+        new MessageServer(port,brokerList).run();
     }
 
 }

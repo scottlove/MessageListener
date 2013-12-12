@@ -11,8 +11,18 @@
         </RandomAccessFile>
     </Appenders>
     <Loggers>
+        <logger name="Producer.producer"  level="info" additivity="false">
+            <AppenderRef ref="Console"/>
+        </logger>
+        <logger name="MessageServer.MessageServer"  level="info" additivity="false">
+            <AppenderRef ref="Console"/>
+        </logger>
+        <logger name="MessageServer.MessageHandler"  level="info" additivity="false">
+            <AppenderRef ref="Console"/>
+        </logger>
         <Root level="error">
             <AppenderRef ref="MyFile"/>
         </Root>
     </Loggers>
 </Configuration>
+
