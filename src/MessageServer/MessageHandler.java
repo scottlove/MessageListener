@@ -11,6 +11,10 @@ import io.netty.buffer.Unpooled;
 import io.netty.channel.*;
 
 
+import io.netty.handler.codec.http.multipart.Attribute;
+import io.netty.handler.codec.http.multipart.DefaultHttpDataFactory;
+import io.netty.handler.codec.http.multipart.HttpPostRequestDecoder;
+import io.netty.handler.codec.http.multipart.InterfaceHttpData;
 import io.netty.util.ReferenceCountUtil;
 
 import io.netty.handler.codec.http.*;
@@ -19,6 +23,7 @@ import static io.netty.handler.codec.http.HttpResponseStatus.*;
 
 
 import java.nio.charset.Charset;
+import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -30,7 +35,8 @@ import org.apache.logging.log4j.Logger;
 public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
 
     private static MessageFactory mf = new MessageFactory() ;
-    private static producerFactory kafkaProducerFactory = new producerFactory()   ;
+    //private static producerFactory kafkaProducerFactory = new producerFactory()   ;
+    IProducer kafkaProducer;
 
     private Logger logger ;
     private String brokerList;
@@ -38,48 +44,52 @@ public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
     public MessageHandler(String brokerList) {
         logger = LogManager.getLogger(MessageHandler.class.getName());
         this.brokerList = brokerList;
+        kafkaProducer = producerFactory.getProducer(brokerList,logger)   ;
     }
 
-    public IMessage parseMessage(String msg) throws IndexOutOfBoundsException
+
+    public IMessage parseMessage( List<InterfaceHttpData> data) throws Exception
     {
 
+        IMessage parsedMessage;
+        String topic = "";
+        String message ="";
+        boolean validMSG = false;
 
-             IMessage parsedMessage;
-             String [] comp = msg.split("&") ;
-             String topic = "";
-             String message ="";
-             boolean validMSG = false;
-
-
-             if (comp.length == 2)
-             {
-                 String [] tp = comp[0].split("=")  ;
-                 if (tp[0].equals("TOPIC") && tp.length==2)
-                 {
-                      topic = tp[1]  ;
-                     String [] m = comp[1].split("=")  ;
-                     if (m[0].equals("MSG") && m.length==2)
-                     {
-                         message = m[1]  ;
-                         validMSG = true;
-                     }
-                 }
-             }
-             if (validMSG)
-             {
-
-                 parsedMessage = mf.createNewMessage(topic) ;
-                 parsedMessage.addMessage(message);
-
-             }
-             else
-             {
-                 logger.warn("parseMessage: invalid msg received");
-                 throw new IndexOutOfBoundsException("invalid message") ;
-             }
+        if (data.size() == 2)
+        {
 
 
-            return parsedMessage;
+            String name = data.get(0).getName();
+            String value = ((Attribute)data.get(0)).getValue() ;
+
+            if (name.equals("TOPIC") && !value.isEmpty())
+            {
+                topic = value ;
+                name = data.get(1).getName();
+                value = ((Attribute)data.get(1)).getValue() ;
+                if (name.equals("MSG") &&!value.isEmpty() )
+                {
+                    message = value ;
+                    validMSG = true;
+                }
+            }
+        }
+        if (validMSG)
+        {
+
+            parsedMessage = mf.createNewMessage(topic) ;
+            parsedMessage.addMessage(message);
+
+        }
+        else
+        {
+            logger.warn("parseMessage: invalid msg received");
+            throw new IndexOutOfBoundsException("invalid message") ;
+        }
+
+
+        return parsedMessage;
     }
 
 
@@ -105,7 +115,7 @@ public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
     }
 
      @Override
-    public void channelRead(ChannelHandlerContext ctx, Object msg) { // (2)    ByteBuf in = (ByteBuf) msg;
+    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception{ // (2)    ByteBuf in = (ByteBuf) msg;
 
          int u =5;
          try {
@@ -116,26 +126,20 @@ public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
             {
 
                 DefaultFullHttpRequest  in =    (DefaultFullHttpRequest )msg;
+                HttpPostRequestDecoder decoder = new HttpPostRequestDecoder(new DefaultHttpDataFactory(false),in);
 
 
-                ByteBuf b = in.content()     ;
 
-                StringBuilder  sb = new StringBuilder() ;
-                if (!b.hasArray()) {
+                List<InterfaceHttpData> data = decoder.getBodyHttpDatas() ;
 
-                    while(b.isReadable())
-                    {
-                        sb.append((char)b.readByte()) ;
-                    }
 
-                    System.out.println(sb.toString());
 
-               }
-                IMessage payload = parseMessage(sb.toString()) ;
-                IProducer ms =   kafkaProducerFactory.getProducer(brokerList,logger) ;
+                //IMessage payload = parseMessage(sb.toString()) ;
+                IMessage payload = parseMessage(data) ;
 
                 String serverMsg;
-                if (ms.send(payload))
+                if (kafkaProducer.send(payload))
+
                 {
                     serverMsg = buildReturnMessage("message received")  ;
                     logger.debug(payload.getMessage().toString());
@@ -148,7 +152,7 @@ public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
 
                 }
 
-                System.out.println(in.getMethod().toString() +":" +in.content().toString(Charset.defaultCharset()));
+                System.out.println(payload.getTopic() + ":" + payload.getMessage());
 
                 sendResponse(ctx,OK,serverMsg);
 

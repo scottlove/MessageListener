@@ -61,7 +61,9 @@ public class MessageServer {
 
 
                            ch.pipeline().addLast( new HttpServerCodec());
+                           ch.pipeline().addLast(new HttpRequestDecoder());
                            ch.pipeline().addLast( new HttpObjectAggregator(512*1024));
+
 
                            ch.pipeline().addLast(new MessageHandler(brokerList));
 
