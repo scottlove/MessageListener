@@ -24,15 +24,6 @@ public class producer implements IProducer{
         this.logger = LogManager.getLogger(producer.class.getName());
     }
 
-    private void sendTraceData(IMessage m)
-    {
-
-        KeyedMessage<String, String> data   = buildKeyedMessage("TRACE", m.getMessageID(), producerUtils.buildOutTrace(m))  ;
-
-
-        producer.send(data);
-    }
-
 
     public KeyedMessage<String, String> buildKeyedMessage(String topic,String key,String msg)
     {
@@ -55,8 +46,6 @@ public class producer implements IProducer{
             logger.error(e.toString());
             return false;
         }
-
-        sendTraceData(m);
 
 
         producer.close();

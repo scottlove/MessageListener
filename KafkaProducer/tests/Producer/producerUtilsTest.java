@@ -26,22 +26,7 @@ public class producerUtilsTest {
 
 
 
-    @Test
-    public void testGetTimeStamp() throws Exception {
-        Timestamp s = producerUtils.getTimeStamp() ;
-        Thread.sleep(10);
-        Timestamp s1 =  producerUtils.getTimeStamp() ;
-        int d= s1.compareTo(s)   ;
-       assertTrue(d ==1);
-    }
 
-    @Test
-    public void testBuildOutTrace() throws Exception {
-        String msg = producerUtils.buildOutTrace(m)  ;
-
-        assertTrue(msg.contains(m.getMessageID()));
-
-    }
 
     @Test
     public void testBuildOutString() throws Exception {

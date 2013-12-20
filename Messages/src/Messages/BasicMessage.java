@@ -5,14 +5,17 @@ import java.util.UUID;
 
 
 public class BasicMessage implements IMessage <String>{
-    private String ID;
-    private String message;
-    private String topic;
+    protected String ID;
+    protected String message;
+    protected String topic;
 
-    private String createUniqueID  ()
+    protected String createUniqueID  ()
     {
        return UUID.randomUUID().toString();
     }
+
+    protected BasicMessage()
+    {}
 
     public BasicMessage(String topic) {
         message = "" ;

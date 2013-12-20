@@ -35,7 +35,6 @@ import org.apache.logging.log4j.Logger;
 public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
 
     private static MessageFactory mf = new MessageFactory() ;
-    //private static producerFactory kafkaProducerFactory = new producerFactory()   ;
     IProducer kafkaProducer;
 
     private Logger logger ;
@@ -133,14 +132,13 @@ public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
                 List<InterfaceHttpData> data = decoder.getBodyHttpDatas() ;
 
 
-
-                //IMessage payload = parseMessage(sb.toString()) ;
                 IMessage payload = parseMessage(data) ;
 
                 String serverMsg;
                 if (kafkaProducer.send(payload))
 
                 {
+                    kafkaProducer.send(mf.createTraceMessage(payload,MessageHandler.class.getName())) ;
                     serverMsg = buildReturnMessage("message received")  ;
                     logger.debug(payload.getMessage().toString());
                 }

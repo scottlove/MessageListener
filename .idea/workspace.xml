@@ -2,14 +2,20 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="MessageListener:jar" />
+      <artifact name="Messages:jar" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0854860a-87b8-4307-acae-96e5db7cb096" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KafkaProducer/KafkaProducer.iml" afterPath="$PROJECT_DIR$/KafkaProducer/KafkaProducer.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Messages/src/Messages/TraceMessage.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Messages/tests/Messages/TraceMessageTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MessageServer/ApplicationProperties.java" afterPath="$PROJECT_DIR$/src/MessageServer/ApplicationProperties.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Messages/src/Messages/BasicMessage.java" afterPath="$PROJECT_DIR$/Messages/src/Messages/BasicMessage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Messages/src/Messages/MessageFactory.java" afterPath="$PROJECT_DIR$/Messages/src/Messages/MessageFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MessageServer/MessageHandler.java" afterPath="$PROJECT_DIR$/src/MessageServer/MessageHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MessageServer/MessageServer.java" afterPath="$PROJECT_DIR$/src/MessageServer/MessageServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KafkaProducer/src/Producer/producer.java" afterPath="$PROJECT_DIR$/KafkaProducer/src/Producer/producer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KafkaProducer/src/Producer/producerUtils.java" afterPath="$PROJECT_DIR$/KafkaProducer/src/Producer/producerUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KafkaProducer/tests/Producer/producerUtilsTest.java" afterPath="$PROJECT_DIR$/KafkaProducer/tests/Producer/producerUtilsTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MessageListener.iws" />
@@ -29,7 +35,7 @@
     <SUITE FILE_PATH="coverage/MessageListener$MessageServer.coverage" NAME="MessageServer Coverage Results" MODIFIED="1385156765073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>MessageServer.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/MessageListener$Messages_in_Messages.coverage" NAME="Messages in Messages Coverage Results" MODIFIED="1385156817713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/MessageListener$Messages_in_Messages.coverage" NAME="Messages in Messages Coverage Results" MODIFIED="1387496055436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Messages.*</FILTER>
     </SUITE>
   </component>
@@ -87,15 +93,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ApplicationProperties.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MessageServer/ApplicationProperties.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="274" selection-end="339" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="442">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="log4j2.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/log4j2.xml">
           <provider selected="true" editor-type-id="text-editor">
@@ -108,26 +105,90 @@
       <file leaf-file-name="MessageServer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MessageServer/MessageServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="25" selection-start="1002" selection-end="1002" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1802">
-              <folding />
+            <state line="111" column="21" selection-start="2702" selection-end="2739" vertical-scroll-proportion="0.0" vertical-offset="782" max-vertical-offset="1802">
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1291#1833#0" expanded="false" />
+                <element signature="e#1809#1810#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MessageHandler.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MessageHandler.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MessageServer/MessageHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="103" selection-start="2711" selection-end="2711" vertical-scroll-proportion="0.18167938" vertical-offset="1224" max-vertical-offset="2703">
+            <state line="140" column="69" selection-start="3898" selection-end="3928" vertical-scroll-proportion="0.0" vertical-offset="1513" max-vertical-offset="2669">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="producerFactory.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/KafkaProducer/src/Producer/producerFactory.java">
+      <file leaf-file-name="BasicMessageTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Messages/tests/Messages/BasicMessageTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="7" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+            <state line="37" column="0" selection-start="692" selection-end="747" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="producer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/KafkaProducer/src/Producer/producer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="48" column="0" selection-start="1300" selection-end="1300" vertical-scroll-proportion="0.0" vertical-offset="125" max-vertical-offset="867">
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#859#875#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TraceMessage.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Messages/src/Messages/TraceMessage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="33" selection-start="520" selection-end="520" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1615">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1506#1507#0" expanded="true" />
+                <element signature="e#1534#1535#0" expanded="true" />
+                <element signature="e#1584#1585#0" expanded="true" />
+                <element signature="e#1609#1610#0" expanded="true" />
+                <element signature="e#1657#1658#0" expanded="true" />
+                <element signature="e#1687#1688#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageFactory.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Messages/src/Messages/MessageFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="42" selection-start="763" selection-end="763" vertical-scroll-proportion="0.42900762" vertical-offset="127" max-vertical-offset="884">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TraceMessageTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Messages/tests/Messages/TraceMessageTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="53" selection-start="850" selection-end="850" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="producerUtilsTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/KafkaProducer/tests/Producer/producerUtilsTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="0" selection-start="474" selection-end="474" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -136,42 +197,6 @@
         <entry file="file://$PROJECT_DIR$/app.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="136">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="producerTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/KafkaProducer/tests/Producer/producerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="182" selection-end="224" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="918">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasicMessage.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Messages/src/Messages/BasicMessage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="0" selection-start="563" selection-end="563" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="833">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IProducer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/KafkaProducer/src/Producer/IProducer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="17" selection-start="100" selection-end="100" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="340">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IMessage.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Messages/src/Messages/IMessage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="17" selection-start="62" selection-end="62" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="340">
               <folding />
             </state>
           </provider>
@@ -201,25 +226,30 @@
         <option value="$PROJECT_DIR$/KafkaProducer/tests/Producer/ApplicationProperties.java" />
         <option value="$PROJECT_DIR$/tests/MessageServer/MessageHandlerTest.java" />
         <option value="$PROJECT_DIR$/Integration/IntTests/MessageServer/app.properties" />
-        <option value="$PROJECT_DIR$/KafkaProducer/src/Producer/producerUtils.java" />
         <option value="$PROJECT_DIR$/Integration/IntTests/MessageServer/MessageServerTest.java" />
         <option value="$PROJECT_DIR$/KafkaProducer/src/Producer/SimplePartitioner.java" />
         <option value="$PROJECT_DIR$/KafkaProducer/tests/Producer/SimplePartitionerTest.java" />
         <option value="$PROJECT_DIR$/src/MessageServer/app.properties" />
-        <option value="$PROJECT_DIR$/KafkaProducer/src/Producer/producer.java" />
         <option value="$PROJECT_DIR$/KafkaProducer/tests/Producer/producerTest.java" />
         <option value="$PROJECT_DIR$/KafkaProducer/tests/Producer/producerFactoryTest.java" />
         <option value="$PROJECT_DIR$/KafkaProducer/src/Producer/producerFactory.java" />
-        <option value="$PROJECT_DIR$/Messages/src/Messages/MessageFactory.java" />
-        <option value="$PROJECT_DIR$/src/MessageServer/ApplicationProperties.java" />
         <option value="$PROJECT_DIR$/log4j2.xml" />
         <option value="$PROJECT_DIR$/src/MessageServer/MessageServer.java" />
+        <option value="$PROJECT_DIR$/KafkaProducer/tests/Producer/TraceMessage.java" />
+        <option value="$PROJECT_DIR$/Messages/src/Messages/BasicMessage.java" />
+        <option value="$PROJECT_DIR$/KafkaProducer/src/Producer/producerUtils.java" />
+        <option value="$PROJECT_DIR$/src/MessageServer/ApplicationProperties.java" />
+        <option value="$PROJECT_DIR$/Messages/src/Messages/MessageFactory.java" />
+        <option value="$PROJECT_DIR$/KafkaProducer/src/Producer/producer.java" />
         <option value="$PROJECT_DIR$/src/MessageServer/MessageHandler.java" />
+        <option value="$PROJECT_DIR$/Messages/src/Messages/TraceMessage.java" />
+        <option value="$PROJECT_DIR$/Messages/tests/Messages/TraceMessageTest.java" />
+        <option value="$PROJECT_DIR$/KafkaProducer/tests/Producer/producerUtilsTest.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1912" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1176" />
@@ -251,7 +281,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -267,6 +296,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="MessageListener" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MessageListener" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MessageListener" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -298,6 +341,82 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Messages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MessageListener" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MessageListener" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Messages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Messages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MessageListener" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MessageListener" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Messages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MessageListener" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MessageListener" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Messages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Messages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MessageListener" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MessageListener" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="KafkaProducer" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -379,25 +498,12 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Producer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MessageListener" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MessageListener" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -425,12 +531,12 @@
     <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="MessageServer" />
-      <recent name="Messages" />
-    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="Messages" />
+      <recent name="MessageServer" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Producer" />
@@ -442,99 +548,7 @@
       <recent name="C:\Users\scotlov\IdeaProjects\MessageListener\KafkaProducer\tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MessageServer">
-    <configuration default="false" name="Producer in KafkaProducer" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Producer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="KafkaProducer" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Producer" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Cover" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Cover" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="SimplePartitionerTest" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Producer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="KafkaProducer" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Producer" />
-      <option name="MAIN_CLASS_NAME" value="Producer.SimplePartitionerTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="MessageServer in MessageListener" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="MessageServer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="MessageListener" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="MessageServer" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.MessageServer in MessageListener">
     <configuration default="false" name="MessageServer" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -563,18 +577,48 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="MessageServerTest" type="JUnit" factoryName="JUnit" temporary="true">
+    <configuration default="false" name="Messages in Messages" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="MessageServer.*" />
+          <option name="PATTERN" value="Messages.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <module name="Integration" />
+      <module name="Messages" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="MessageServer" />
-      <option name="MAIN_CLASS_NAME" value="MessageServer.MessageServerTest" />
+      <option name="PACKAGE_NAME" value="Messages" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Cover" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Cover" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TraceMessageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Messages.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Messages" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="Messages" />
+      <option name="MAIN_CLASS_NAME" value="Messages.TraceMessageTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -587,20 +631,64 @@
       </option>
       <envs />
       <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
-      <option name="PROGRAM_PARAMETERS" />
+    <configuration default="false" name="Producer in KafkaProducer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Producer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="KafkaProducer" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="Producer" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="MessageServer in MessageListener" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="MessageServer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="MessageListener" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="MessageServer" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails" singleton="true">
@@ -611,6 +699,12 @@
       <setting name="passParentEnv" value="true" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <setting name="launchBrowser" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
       <method />
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -641,6 +735,38 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -667,38 +793,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
-    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="myFilePath" />
-      <option name="GLUE" />
-      <option name="myNameFilter" />
-      <option name="myGeneratedName" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -757,19 +851,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.Producer in KafkaProducer" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.SimplePartitionerTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.MessageServer in MessageListener" />
-      <item index="3" class="java.lang.String" itemvalue="Application.MessageServer" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.MessageServerTest" />
+      <item index="0" class="java.lang.String" itemvalue="Application.MessageServer" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.Messages in Messages" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.TraceMessageTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.Producer in KafkaProducer" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.MessageServer in MessageListener" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.MessageServer" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.SimplePartitionerTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.MessageServerTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.MessageServer in MessageListener" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.Producer in KafkaProducer" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.MessageServer in MessageListener" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.Producer in KafkaProducer" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.Messages in Messages" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.TraceMessageTest" />
+        <item index="4" class="java.lang.String" itemvalue="Application.MessageServer" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -791,7 +885,8 @@
       <workItem from="1386972909771" duration="749000" />
       <workItem from="1387225642133" duration="1892000" />
       <workItem from="1387234913286" duration="1450000" />
-      <workItem from="1387388656944" duration="12500000" />
+      <workItem from="1387388656944" duration="14809000" />
+      <workItem from="1387482161527" duration="7157000" />
     </task>
     <task id="LOCAL-00001" summary="updates to netty response">
       <created>1384822779104</created>
@@ -845,15 +940,19 @@
       <created>1386722298049</created>
       <updated>1386722298049</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Fixed encoding issue with Post data">
+      <created>1387404223721</created>
+      <updated>1387404223721</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23181000" />
+    <option name="totallyTimeSpent" value="32647000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854405" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -869,6 +968,7 @@
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32791588" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32950193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3290735" sideWeight="0.6712598" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -877,7 +977,6 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25665602" sideWeight="0.6712598" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3275862" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32924226" sideWeight="0.6712598" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -906,7 +1005,8 @@
     <MESSAGE value="Integration tests work" />
     <MESSAGE value="Updated partitioning logic" />
     <MESSAGE value="Updated partitioning logic&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated partitioning logic&#10;" />
+    <MESSAGE value="Fixed encoding issue with Post data" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed encoding issue with Post data" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -916,23 +1016,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Messages/src/Messages/MessageFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="78" selection-start="162" selection-end="162" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="272" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/KafkaProducer/tests/Producer/producerFactoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="939" selection-end="939" vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="595">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Messages/src/Messages/MessageFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="78" selection-start="162" selection-end="162" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="272" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/KafkaProducer/tests/Producer/producerFactoryTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="58" selection-start="912" selection-end="912" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="578">
@@ -1048,7 +1131,11 @@
     <entry file="file://$PROJECT_DIR$/src/MessageServer/MessageServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="80" column="77" selection-start="2078" selection-end="2078" vertical-scroll-proportion="0.0" vertical-offset="1360" max-vertical-offset="2210">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1291#1833#0" expanded="false" />
+            <element signature="e#1809#1810#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1085,7 +1172,11 @@
     <entry file="file://$PROJECT_DIR$/src/MessageServer/MessageServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="80" column="77" selection-start="2078" selection-end="2078" vertical-scroll-proportion="0.0" vertical-offset="1360" max-vertical-offset="2210">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1291#1833#0" expanded="false" />
+            <element signature="e#1809#1810#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1109,11 +1200,6 @@
         <state line="21" column="70" selection-start="513" selection-end="513" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="459" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/KafkaProducer/tests/Producer/producerUtilsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="183" selection-end="183" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/KafkaProducer/tests/Producer/SimplePartitionerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="70" selection-start="513" selection-end="513" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459" />
@@ -1126,25 +1212,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Messages/src/Messages/BasicMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="563" selection-end="563" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Messages/src/Messages/IMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="17" selection-start="62" selection-end="62" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Messages/src/Messages/MessageFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="162" selection-end="162" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="272" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/KafkaProducer/src/Producer/IProducer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="17" selection-start="100" selection-end="100" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
@@ -1152,26 +1219,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/KafkaProducer/src/Producer/producer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="45" selection-start="1340" selection-end="1340" vertical-scroll-proportion="0.58176553" vertical-offset="499" max-vertical-offset="1190" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/KafkaProducer/src/Producer/producerUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="60" selection-start="692" selection-end="692" vertical-scroll-proportion="-0.15629523" vertical-offset="601" max-vertical-offset="1292" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/KafkaProducer/src/Producer/SimplePartitioner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="70" selection-start="650" selection-end="650" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MessageServer/ApplicationProperties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="274" selection-end="339" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="442">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/log4j2.xml">
@@ -1202,23 +1252,116 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MessageServer/MessageServer.java">
+    <entry file="file://$PROJECT_DIR$/KafkaProducer/src/Producer/producerFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="25" selection-start="1002" selection-end="1002" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1802">
+        <state line="27" column="9" selection-start="656" selection-end="656" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Messages/src/Messages/IMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="17" selection-start="62" selection-end="62" vertical-scroll-proportion="0.1" vertical-offset="0" max-vertical-offset="1020">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/KafkaProducer/src/Producer/producerFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/MessageServer/ApplicationProperties.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="7" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+        <state line="9" column="0" selection-start="153" selection-end="432" vertical-scroll-proportion="0.11911912" vertical-offset="0" max-vertical-offset="999">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MessageServer/MessageServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="111" column="21" selection-start="2702" selection-end="2739" vertical-scroll-proportion="0.0" vertical-offset="782" max-vertical-offset="1802">
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1291#1833#0" expanded="false" />
+            <element signature="e#1809#1810#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/KafkaProducer/src/Producer/producer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="0" selection-start="1300" selection-end="1300" vertical-scroll-proportion="0.0" vertical-offset="125" max-vertical-offset="867">
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#859#875#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Messages/src/Messages/BasicMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="57" selection-start="385" selection-end="385" vertical-scroll-proportion="0.0" vertical-offset="93" max-vertical-offset="748">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MessageServer/MessageHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="103" selection-start="2711" selection-end="2711" vertical-scroll-proportion="0.18167938" vertical-offset="1224" max-vertical-offset="2703">
+        <state line="140" column="69" selection-start="3898" selection-end="3928" vertical-scroll-proportion="0.0" vertical-offset="1513" max-vertical-offset="2669">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Messages/tests/Messages/BasicMessageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="0" selection-start="692" selection-end="747" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/KafkaProducer/src/Producer/producerUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/KafkaProducer/tests/Producer/producerUtilsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="0" selection-start="474" selection-end="474" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Messages/tests/Messages/TraceMessageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="53" selection-start="850" selection-end="850" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Messages/src/Messages/TraceMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="33" selection-start="520" selection-end="520" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1615">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1506#1507#0" expanded="true" />
+            <element signature="e#1534#1535#0" expanded="true" />
+            <element signature="e#1584#1585#0" expanded="true" />
+            <element signature="e#1609#1610#0" expanded="true" />
+            <element signature="e#1657#1658#0" expanded="true" />
+            <element signature="e#1687#1688#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Messages/src/Messages/MessageFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="42" selection-start="763" selection-end="763" vertical-scroll-proportion="0.42900762" vertical-offset="127" max-vertical-offset="884">
           <folding />
         </state>
       </provider>
@@ -1278,7 +1421,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>KafkaProducer</last-edited>
+          <last-edited>MessageListener</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
