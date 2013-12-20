@@ -6,16 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0854860a-87b8-4307-acae-96e5db7cb096" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Messages/src/Messages/TraceMessage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Messages/tests/Messages/TraceMessageTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MessageServer/ApplicationProperties.java" afterPath="$PROJECT_DIR$/src/MessageServer/ApplicationProperties.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Messages/src/Messages/BasicMessage.java" afterPath="$PROJECT_DIR$/Messages/src/Messages/BasicMessage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Messages/src/Messages/MessageFactory.java" afterPath="$PROJECT_DIR$/Messages/src/Messages/MessageFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MessageServer/MessageHandler.java" afterPath="$PROJECT_DIR$/src/MessageServer/MessageHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KafkaProducer/src/Producer/producer.java" afterPath="$PROJECT_DIR$/KafkaProducer/src/Producer/producer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KafkaProducer/src/Producer/producerUtils.java" afterPath="$PROJECT_DIR$/KafkaProducer/src/Producer/producerUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KafkaProducer/tests/Producer/producerUtilsTest.java" afterPath="$PROJECT_DIR$/KafkaProducer/tests/Producer/producerUtilsTest.java" />
+    <list default="true" id="0854860a-87b8-4307-acae-96e5db7cb096" name="Default" comment="refactored trace messaging&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MessageListener.iws" />
@@ -296,20 +287,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="MessageListener" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MessageListener" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MessageListener" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -886,7 +863,7 @@
       <workItem from="1387225642133" duration="1892000" />
       <workItem from="1387234913286" duration="1450000" />
       <workItem from="1387388656944" duration="14809000" />
-      <workItem from="1387482161527" duration="7157000" />
+      <workItem from="1387482161527" duration="7232000" />
     </task>
     <task id="LOCAL-00001" summary="updates to netty response">
       <created>1384822779104</created>
@@ -944,11 +921,15 @@
       <created>1387404223721</created>
       <updated>1387404223721</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="refactored trace messaging&#10;">
+      <created>1387498482419</created>
+      <updated>1387498482419</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32647000" />
+    <option name="totallyTimeSpent" value="32722000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -974,7 +955,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25665602" sideWeight="0.6712598" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25665602" sideWeight="0.6712598" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3275862" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1006,7 +987,8 @@
     <MESSAGE value="Updated partitioning logic" />
     <MESSAGE value="Updated partitioning logic&#10;" />
     <MESSAGE value="Fixed encoding issue with Post data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed encoding issue with Post data" />
+    <MESSAGE value="refactored trace messaging&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored trace messaging&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
