@@ -1,4 +1,4 @@
-package KafkaConsumerLib;
+
 
 
 public interface IOutputter {

@@ -1,6 +1,3 @@
-package MessageServer;
-
-
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -9,20 +6,12 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.handler.codec.http.*;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import java.nio.charset.Charset;
-import java.util.Enumeration;
-import java.util.Iterator;
-import java.util.Properties;
-import java.util.Set;
-
+import io.netty.handler.codec.http.HttpObjectAggregator;
+import io.netty.handler.codec.http.HttpRequestDecoder;
+import io.netty.handler.codec.http.HttpServerCodec;
+import org.apache.logging.log4j.core.Logger;
 
 public class MessageServer {
-
-
 
     private int port;
     private static Logger logger ;
@@ -60,12 +49,12 @@ public class MessageServer {
                         public void initChannel(SocketChannel ch) throws Exception {
 
 
-                           ch.pipeline().addLast( new HttpServerCodec());
-                           ch.pipeline().addLast(new HttpRequestDecoder());
-                           ch.pipeline().addLast( new HttpObjectAggregator(512*1024));
+                            ch.pipeline().addLast( new HttpServerCodec());
+                            ch.pipeline().addLast(new HttpRequestDecoder());
+                            ch.pipeline().addLast( new HttpObjectAggregator(512*1024));
 
 
-                           ch.pipeline().addLast(new MessageHandler(brokerList));
+                            ch.pipeline().addLast(new MessageHandler(brokerList));
 
                         }
 
@@ -94,30 +83,6 @@ public class MessageServer {
 
         }
 
-    }
-
-    public static void main(String[] args) throws Exception {
-        int port;
-        String brokerList;
-        ApplicationProperties ap = new ApplicationProperties()  ;
-        Properties p = ap.getProperties()  ;
-
-
-        if (args.length > 0) {
-            port = Integer.parseInt(args[0]);
-        } else {
-            port = Integer.parseInt( p.getProperty("port") ) ;
-        }
-
-        brokerList = p.getProperty("metadata.broker.list")   ;
-
-        logger = LogManager.getLogger(MessageServer.class.getName());
-
-        logger.info("Starting Message Server")        ;
-
-
-
-        new MessageServer(port,brokerList).run();
     }
 
 }

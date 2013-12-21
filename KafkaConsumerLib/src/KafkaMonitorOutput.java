@@ -1,4 +1,4 @@
-package KafkaConsumerLib;
+
 
 import Messages.IMessage;
 import Messages.MessageFactory;
@@ -30,7 +30,7 @@ public class KafkaMonitorOutput implements IOutputter {
         String [] d = data.split(":") ;
 
 
-        IMessage m = mf.createTraceMessage(d[0],"test" )  ;
+        IMessage m = mf.createTraceMessage("1234","test" )  ;
 
         kafkaProducer.send(m);
     }

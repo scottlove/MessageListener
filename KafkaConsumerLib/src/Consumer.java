@@ -1,4 +1,4 @@
-package KafkaConsumerLib;
+
 
 import kafka.consumer.ConsumerIterator;
 import kafka.consumer.KafkaStream;
@@ -23,9 +23,10 @@ public class Consumer implements Runnable {
         while (it.hasNext())
         {
             String out = new String(it.next().message());
-            //System.out.println(out);
+
             for(IOutputter output : outputs)
             {
+                System.out.println(m_threadNumber);
                 output.writeString(out);
             }
         }

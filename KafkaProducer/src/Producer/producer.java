@@ -37,6 +37,9 @@ public class producer implements IProducer{
 
         String msg = producerUtils.buildOutString(m)  ;
         KeyedMessage<String, String> data   = buildKeyedMessage(m.getTopic(), m.getMessageID(), msg)  ;
+
+        logger.info(m.getTopic() + "::" + m.getMessage());
+        System.out.println(m.getTopic() + "::" + m.getMessage()) ;
         try
         {
             producer.send(data);

@@ -1,4 +1,4 @@
-package KafkaConsumerLib;
+
 
 import kafka.javaapi.consumer.ConsumerConnector;
 import kafka.consumer.ConsumerConfig;
