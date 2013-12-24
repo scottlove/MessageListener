@@ -6,6 +6,6 @@ public class ConsoleOutputter implements IOutputter {
     public void writeString(String data) {
        Logger logger = LogManager.getLogger(ConsoleOutputter.class.getName());
        logger.info(data.toString());
-       System.out.println("Kafka consumer:" + data.toString())    ;
+
     }
 }

@@ -39,7 +39,7 @@ public class producer implements IProducer{
         KeyedMessage<String, String> data   = buildKeyedMessage(m.getTopic(), m.getMessageID(), msg)  ;
 
         logger.info(m.getTopic() + "::" + m.getMessage());
-        System.out.println(m.getTopic() + "::" + m.getMessage()) ;
+;
         try
         {
             producer.send(data);
@@ -51,7 +51,12 @@ public class producer implements IProducer{
         }
 
 
-        producer.close();
+
         return true;
+    }
+
+    public void close()
+    {
+        producer.close();
     }
 }

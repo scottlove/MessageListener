@@ -1,14 +1,19 @@
 
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.FileOutputStream;
 
 
 public class ConsumerFileOutputter implements IOutputter {
     String fileName;
+    Logger logger;
 
     public ConsumerFileOutputter(String fileName)
     {
         this.fileName = fileName;
+        logger = LogManager.getLogger(ConsoleOutputter.class.getName());
     }
 
     public synchronized  void writeString(String data)
@@ -16,6 +21,8 @@ public class ConsumerFileOutputter implements IOutputter {
         try
         {
 
+
+        logger.info(data.toString())   ;
         String par = "<p>"  ;
         FileOutputStream f0 = new FileOutputStream(fileName,true)    ;
         f0.write(par.getBytes());

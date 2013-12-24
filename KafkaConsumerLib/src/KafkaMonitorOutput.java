@@ -12,13 +12,16 @@ public class KafkaMonitorOutput implements IOutputter {
 
     IProducer kafkaProducer;
     private Logger logger ;
-    private String brokerList;
+    private String className;
+
     private static MessageFactory mf = new MessageFactory();
 
-    public KafkaMonitorOutput(String brokerList)
+
+    public KafkaMonitorOutput(String brokerList,String className)
     {
         logger = LogManager.getLogger(KafkaMonitorOutput.class.getName());
-        this.brokerList = brokerList;
+        this.className = className;
+
         kafkaProducer = producerFactory.getProducer(brokerList, logger)   ;
 
     }
@@ -26,11 +29,11 @@ public class KafkaMonitorOutput implements IOutputter {
     @Override
     public void writeString(String data) {
 
-
+        logger.info(data.toString())   ;
         String [] d = data.split(":") ;
 
 
-        IMessage m = mf.createTraceMessage("1234","test" )  ;
+        IMessage m = mf.createTraceMessage(d[0],className )  ;
 
         kafkaProducer.send(m);
     }

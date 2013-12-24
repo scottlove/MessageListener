@@ -26,7 +26,6 @@ public class Consumer implements Runnable {
 
             for(IOutputter output : outputs)
             {
-                System.out.println(m_threadNumber);
                 output.writeString(out);
             }
         }
