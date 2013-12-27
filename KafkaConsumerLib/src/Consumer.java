@@ -19,6 +19,8 @@ public class Consumer implements Runnable {
     }
 
     public void run() {
+
+        @SuppressWarnings("unchecked")
         ConsumerIterator<byte[], byte[]> it = m_stream.iterator();
         while (it.hasNext())
         {
