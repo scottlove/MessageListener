@@ -43,8 +43,8 @@ public class MessageFactory {
        return new BasicMessage(topic)   ;
    }
 
-    public  IMessage createTraceMessage(IMessage m,String className)
+    public  IMessage createTraceMessage(String messageID,String className)
     {
-        return new TraceMessage(m,className)   ;
+        return new TraceMessage(messageID,className)   ;
     }
 }

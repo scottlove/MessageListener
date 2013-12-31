@@ -25,7 +25,7 @@ public class TraceMessageTest {
     @Test
     public void testTraceMessage() throws Exception {
 
-             TraceMessage tm = new TraceMessage(message,TraceMessageTest.class.getName())  ;
+             TraceMessage tm = new TraceMessage(message.getMessageID(),TraceMessageTest.class.getName())  ;
 
             assertEquals(tm.getTopic(),"TRACE");
 

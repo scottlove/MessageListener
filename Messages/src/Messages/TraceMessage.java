@@ -19,7 +19,7 @@ public class TraceMessage extends BasicMessage {
         return t;
     }
 
-    private String buildOutTrace(IMessage m, String className)
+    private String buildOutTrace(String messageID, String className)
     {
 
         String hostName  ;
@@ -44,7 +44,7 @@ public class TraceMessage extends BasicMessage {
         StringBuilder o = new StringBuilder()   ;
 
 
-        o.append(m.getMessageID()) ;
+        o.append(messageID) ;
         o.append(":")  ;
         o.append(hostName) ;
         o.append(":")  ;
@@ -57,11 +57,11 @@ public class TraceMessage extends BasicMessage {
         return o.toString()  ;
     }
 
-    public TraceMessage(IMessage m, String className) {
+    public TraceMessage(String messageID, String className) {
 
         this.ID = createUniqueID();
         this.topic = "TRACE";
-        this.message =buildOutTrace(m,className)  ;
+        this.message =buildOutTrace(messageID,className)  ;
 
     }
 

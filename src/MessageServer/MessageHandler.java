@@ -138,7 +138,7 @@ public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
                 if (kafkaProducer.send(payload))
 
                 {
-                    kafkaProducer.send(mf.createTraceMessage(payload,MessageHandler.class.getName())) ;
+                    kafkaProducer.send(mf.createTraceMessage(payload.getMessageID(),MessageHandler.class.getName())) ;
                     serverMsg = buildReturnMessage("message received")  ;
                     logger.debug(payload.getMessage().toString());
                 }
