@@ -7,20 +7,11 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://C:/Dev/Lib/netty-4.0.12.Final/jar/all-in-one/netty-all-4.0.12.Final.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="library" name="log4j-api-2.0-beta91" level="project" />
-    <orderEntry type="library" name="log4j-core-2.0-beta91" level="project" />
-    <orderEntry type="library" name="netty-all-4.0.12.Final1" level="project" />
     <orderEntry type="module" module-name="Messages" />
     <orderEntry type="module" module-name="KafkaProducer" />
+    <orderEntry type="library" name="log4j-api-2.0-beta9" level="application" />
+    <orderEntry type="library" name="log4j-core-2.0-beta9" level="application" />
+    <orderEntry type="library" name="netty-all-4.0.12.Final1" level="project" />
   </component>
 </module>
 

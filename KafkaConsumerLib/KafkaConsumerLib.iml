@@ -7,14 +7,32 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="KafkaProducer" />
-    <orderEntry type="module" module-name="Messages" />
-    <orderEntry type="library" name="log4j-api-2.0-beta91" level="project" />
-    <orderEntry type="library" name="log4j-core-2.0-beta91" level="project" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
           <root url="jar://C:/Dev/Lib/kafka_2.8.0-0.8.0-beta1/kafka_2.8.0-0.8.0-beta1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module" module-name="Messages" />
+    <orderEntry type="module" module-name="KafkaProducer" />
+    <orderEntry type="library" name="log4j-core-2.0-beta9" level="application" />
+    <orderEntry type="library" name="log4j-api-2.0-beta9" level="application" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/Dev/Lib/kafka_2.8.0-0.8.0-beta1/libs/scala-compiler.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/Dev/Lib/kafka_2.8.0-0.8.0-beta1/libs/scala-library.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
