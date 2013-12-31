@@ -1,5 +1,3 @@
-package MessageServer;
-
 import Messages.IMessage;
 import Messages.MessageFactory;
 import Producer.IProducer;
@@ -29,10 +27,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
-
-
-
-public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
+public class MessageHandler extends ChannelInboundHandlerAdapter {
 
     private static MessageFactory mf = new MessageFactory() ;
     IProducer kafkaProducer;
@@ -113,14 +108,14 @@ public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
         f.addListener(ChannelFutureListener.CLOSE);
     }
 
-     @Override
+    @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception{ // (2)    ByteBuf in = (ByteBuf) msg;
 
-         int u =5;
-         try {
+        int u =5;
+        try {
 
             logger.info("starting channel read")   ;
-            if (msg instanceof DefaultFullHttpRequest  )
+            if (msg instanceof DefaultFullHttpRequest)
             //if (msg instanceof DefaultLastHttpContent  )
             {
 
@@ -174,4 +169,3 @@ public class MessageHandler  extends ChannelInboundHandlerAdapter { // (1)
 
     }
 }
-
