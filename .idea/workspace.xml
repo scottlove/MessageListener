@@ -7,19 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0854860a-87b8-4307-acae-96e5db7cb096" name="Default" comment="cleaned up dendencies">
-      <change type="DELETED" beforePath="C:\Users\scotlov\Documents\GitHub\MessageListener\.idea\libraries\log4j_api_2_0_beta91.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\scotlov\Documents\GitHub\MessageListener\.idea\libraries\log4j_core_2_0_beta91.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KafkaConsumerLib/src/ConsumerGroup.java" afterPath="$PROJECT_DIR$/KafkaConsumerLib/src/ConsumerGroup.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NettyLib/src/HttpResponseHandler.java" afterPath="$PROJECT_DIR$/NettyLib/src/HttpResponseHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      <change type="MOVED" beforePath="C:\Users\scotlov\Documents\GitHub\MessageListener\MessageListener.iml" afterPath="$PROJECT_DIR$/MessageProcessorLibs.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KafkaConsumerLib/KafkaConsumerLib.iml" afterPath="$PROJECT_DIR$/KafkaConsumerLib/KafkaConsumerLib.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KafkaProducer/KafkaProducer.iml" afterPath="$PROJECT_DIR$/KafkaProducer/KafkaProducer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MessageListener.iml" afterPath="$PROJECT_DIR$/MessageListener.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MessageServer/MessageServer.iml" afterPath="$PROJECT_DIR$/MessageServer/MessageServer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Messages/Messages.iml" afterPath="$PROJECT_DIR$/Messages/Messages.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NettyLib/NettyLib.iml" afterPath="$PROJECT_DIR$/NettyLib/NettyLib.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NettyLib/src/PostMessageSender.java" afterPath="$PROJECT_DIR$/NettyLib/src/PostMessageSender.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KafkaProducer/src/Producer/producer.java" afterPath="$PROJECT_DIR$/KafkaProducer/src/Producer/producer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MessageListener.iws" />
@@ -99,7 +91,16 @@
       <file leaf-file-name="Consumer.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/KafkaConsumerLib/src/Consumer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="3" selection-start="590" selection-end="590" vertical-scroll-proportion="0.2821497" vertical-offset="210" max-vertical-offset="731">
+            <state line="24" column="3" selection-start="590" selection-end="590" vertical-scroll-proportion="0.28323698" vertical-offset="210" max-vertical-offset="731">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConsumerFileOutputter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/KafkaConsumerLib/src/ConsumerFileOutputter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="31" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
               <folding />
             </state>
           </provider>
@@ -135,7 +136,7 @@
       <file leaf-file-name="PostMessageSender.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NettyLib/src/PostMessageSender.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="13" selection-start="658" selection-end="658" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="3587">
+            <state line="18" column="13" selection-start="740" selection-end="740" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="3638">
               <folding />
             </state>
           </provider>
@@ -163,15 +164,6 @@
         <entry file="file://$PROJECT_DIR$/KafkaProducer/src/Producer/producer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="41" column="0" selection-start="1181" selection-end="1181" vertical-scroll-proportion="0.0" vertical-offset="697" max-vertical-offset="1139">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="producerFactory.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/KafkaProducer/src/Producer/producerFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="5" selection-start="656" selection-end="656" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="578">
               <folding />
             </state>
           </provider>
@@ -340,6 +332,30 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MessageListener" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KafkaConsumerLib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MessageListener" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KafkaConsumerLib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -360,6 +376,10 @@
     <property name="recentsLimit" value="5" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
+    <property name="last_opened_file_path" value="C:/Dev/Lib/kafka_2.8.0-0.8.0-beta1/libs/scala-library.jar!/" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
@@ -806,6 +826,7 @@
       <workItem from="1388191556447" duration="739000" />
       <workItem from="1388514485126" duration="194000" />
       <workItem from="1388514684284" duration="16000" />
+      <workItem from="1388514843552" duration="275000" />
     </task>
     <task id="LOCAL-00001" summary="updates to netty response">
       <created>1384822779104</created>
@@ -891,7 +912,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60720000" />
+    <option name="totallyTimeSpent" value="60995000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -930,6 +951,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32688928" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3409894" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -945,7 +967,6 @@
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33978873" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1152,11 +1173,6 @@
         <state line="29" column="42" selection-start="738" selection-end="738" vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="782" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/KafkaConsumerLib/src/ConsumerFileOutputter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="548" selection-end="618" vertical-scroll-proportion="0.0" vertical-offset="254" max-vertical-offset="799" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/KafkaConsumerLib/src/IOutputter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="17" selection-start="20" selection-end="20" vertical-scroll-proportion="0.09392265" vertical-offset="0" max-vertical-offset="543" />
@@ -1164,9 +1180,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="9" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="136">
-          <folding />
-        </state>
+        <state line="2" column="9" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="136" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/KafkaConsumerLib/src/ConsoleOutputter.java">
@@ -1206,30 +1220,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/NettyLib/src/PostMessageSender.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="658" selection-end="658" vertical-scroll-proportion="0.0" vertical-offset="2040" max-vertical-offset="3281">
+        <state line="18" column="13" selection-start="740" selection-end="740" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="3638">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Messages/src/Messages/BasicMessage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0" vertical-offset="229" max-vertical-offset="748">
-          <folding />
-        </state>
+        <state line="20" column="0" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0" vertical-offset="229" max-vertical-offset="748" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Messages/src/Messages/IMessage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="17" selection-start="62" selection-end="62" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-          <folding />
-        </state>
+        <state line="6" column="17" selection-start="62" selection-end="62" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Messages/src/Messages/MessageFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="5" selection-start="1242" selection-end="1242" vertical-scroll-proportion="0.0" vertical-offset="365" max-vertical-offset="884">
-          <folding />
-        </state>
+        <state line="48" column="5" selection-start="1242" selection-end="1242" vertical-scroll-proportion="0.0" vertical-offset="365" max-vertical-offset="884" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Messages/src/Messages/TraceMessage.java">
@@ -1262,14 +1270,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/KafkaProducer/src/Producer/SimplePartitioner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="25" selection-start="650" selection-end="650" vertical-scroll-proportion="0.68786126" vertical-offset="0" max-vertical-offset="519">
+        <state line="22" column="25" selection-start="650" selection-end="650" vertical-scroll-proportion="0.68786126" vertical-offset="0" max-vertical-offset="519" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/KafkaConsumerLib/src/ConsumerFileOutputter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="31" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/KafkaConsumerLib/src/Consumer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="3" selection-start="590" selection-end="590" vertical-scroll-proportion="0.2821497" vertical-offset="210" max-vertical-offset="731">
+        <state line="24" column="3" selection-start="590" selection-end="590" vertical-scroll-proportion="0.28323698" vertical-offset="210" max-vertical-offset="731">
           <folding />
         </state>
       </provider>
@@ -1329,12 +1342,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>KafkaProducer</last-edited>
+          <last-edited>KafkaConsumerLib</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -1354,7 +1366,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>netty-all-4.0.12.Final1</last-edited>
+          <last-edited>hamcrest-core-1.3</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
