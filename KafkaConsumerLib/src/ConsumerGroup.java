@@ -24,6 +24,7 @@ public class ConsumerGroup {
 
         this.topic = a_topic;
         this.outputs = outputters;
+
     }
 
     public void shutdown()

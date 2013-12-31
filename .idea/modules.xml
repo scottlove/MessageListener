@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/KafkaConsumerLib/KafkaConsumerLib.iml" filepath="$PROJECT_DIR$/KafkaConsumerLib/KafkaConsumerLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/KafkaProducer/KafkaProducer.iml" filepath="$PROJECT_DIR$/KafkaProducer/KafkaProducer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/MessageListener.iml" filepath="$PROJECT_DIR$/MessageListener.iml" />
       <module fileurl="file://$PROJECT_DIR$/MessageServer/MessageServer.iml" filepath="$PROJECT_DIR$/MessageServer/MessageServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/Messages/Messages.iml" filepath="$PROJECT_DIR$/Messages/Messages.iml" />
       <module fileurl="file://$PROJECT_DIR$/NettyLib/NettyLib.iml" filepath="$PROJECT_DIR$/NettyLib/NettyLib.iml" />

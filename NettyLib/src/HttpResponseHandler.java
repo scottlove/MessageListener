@@ -9,6 +9,7 @@ import java.nio.charset.Charset;
 
 public class HttpResponseHandler extends ChannelInboundHandlerAdapter {
 
+
       private Logger logger;
       public HttpResponseHandler(Logger logger)
       {
