@@ -1,0 +1,54 @@
+2013-12-18 11:14:59,008 ERROR P.producer  [nioEventLoopGroup-3-1] kafka.common.FailedToSendMessageException: Failed to send messages after 3 tries.
+2013-12-18 11:14:59,010 ERROR M.MessageHandler  [nioEventLoopGroup-3-1] unable to forward message
+2013-12-18 11:14:59,010 ERROR M.MessageHandler  [nioEventLoopGroup-3-1] 
+2013-12-18 11:47:26,416 ERROR P.producer  [nioEventLoopGroup-3-1] kafka.common.FailedToSendMessageException: Failed to send messages after 3 tries.
+2013-12-18 11:47:26,418 ERROR M.MessageHandler  [nioEventLoopGroup-3-1] unable to forward message
+2013-12-18 11:47:26,418 ERROR M.MessageHandler  [nioEventLoopGroup-3-1] 
+2013-12-18 11:50:12,299 ERROR P.producer  [nioEventLoopGroup-3-1] kafka.common.FailedToSendMessageException: Failed to send messages after 3 tries.
+2013-12-18 11:50:12,301 ERROR M.MessageHandler  [nioEventLoopGroup-3-1] unable to forward message
+2013-12-18 11:50:12,301 ERROR M.MessageHandler  [nioEventLoopGroup-3-1] 
+2013-12-18 11:50:18,916 ERROR P.producer  [nioEventLoopGroup-3-2] kafka.common.FailedToSendMessageException: Failed to send messages after 3 tries.
+2013-12-18 11:50:18,916 ERROR M.MessageHandler  [nioEventLoopGroup-3-2] unable to forward message
+2013-12-18 11:50:18,916 ERROR M.MessageHandler  [nioEventLoopGroup-3-2] 
+2013-12-18 13:35:15,195 ERROR P.producer  [nioEventLoopGroup-3-1] kafka.common.FailedToSendMessageException: Failed to send messages after 3 tries.
+2013-12-18 13:35:15,199 ERROR M.MessageHandler  [nioEventLoopGroup-3-1] unable to forward message
+2013-12-18 13:35:15,200 ERROR M.MessageHandler  [nioEventLoopGroup-3-1] TOPIC=ptTest&MSG=message+count%3A0
+2013-12-18 13:35:48,701 ERROR P.producer  [nioEventLoopGroup-3-1] kafka.common.FailedToSendMessageException: Failed to send messages after 3 tries.
+2013-12-18 13:35:48,705 ERROR M.MessageHandler  [nioEventLoopGroup-3-1] unable to forward message
+2013-12-18 13:35:48,706 ERROR M.MessageHandler  [nioEventLoopGroup-3-1] TOPIC=ptTest&MSG=message+count%3A0
+2013-12-18 13:36:07,241 ERROR P.producer  [nioEventLoopGroup-3-2] kafka.common.FailedToSendMessageException: Failed to send messages after 3 tries.
+2013-12-18 13:36:07,241 ERROR M.MessageHandler  [nioEventLoopGroup-3-2] unable to forward message
+2013-12-18 13:36:07,242 ERROR M.MessageHandler  [nioEventLoopGroup-3-2] TOPIC=ptTest&MSG=message+count%3A1
+2013-12-18 13:36:25,734 ERROR P.producer  [nioEventLoopGroup-3-3] kafka.common.FailedToSendMessageException: Failed to send messages after 3 tries.
+2013-12-18 13:36:25,734 ERROR M.MessageHandler  [nioEventLoopGroup-3-3] unable to forward message
+2013-12-18 13:36:25,735 ERROR M.MessageHandler  [nioEventLoopGroup-3-3] TOPIC=ptTest&MSG=message+count%3A2
+2013-12-20 12:39:02,918 ERROR P.producer  [nioEventLoopGroup-3-1] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 12:39:02,961 ERROR P.producer  [nioEventLoopGroup-3-2] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 12:39:02,976 ERROR P.producer  [nioEventLoopGroup-3-3] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 12:39:02,991 ERROR P.producer  [nioEventLoopGroup-3-4] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 12:39:03,009 ERROR P.producer  [nioEventLoopGroup-3-5] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 12:39:03,023 ERROR P.producer  [nioEventLoopGroup-3-6] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 12:39:03,037 ERROR P.producer  [nioEventLoopGroup-3-7] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 12:39:03,084 ERROR P.producer  [nioEventLoopGroup-3-8] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 12:39:03,098 ERROR P.producer  [nioEventLoopGroup-3-9] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 12:39:03,111 ERROR P.producer  [nioEventLoopGroup-3-10] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 12:44:26,649 ERROR P.producer  [nioEventLoopGroup-3-11] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 12:44:26,667 ERROR P.producer  [nioEventLoopGroup-3-12] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 12:44:26,679 ERROR P.producer  [nioEventLoopGroup-3-13] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 12:44:26,691 ERROR P.producer  [nioEventLoopGroup-3-14] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 12:44:26,706 ERROR P.producer  [nioEventLoopGroup-3-15] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 12:44:26,719 ERROR P.producer  [nioEventLoopGroup-3-16] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 12:44:26,732 ERROR P.producer  [nioEventLoopGroup-3-17] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 12:44:26,745 ERROR P.producer  [nioEventLoopGroup-3-18] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 12:44:26,747 ERROR P.producer  [nioEventLoopGroup-3-19] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 12:44:26,762 ERROR P.producer  [nioEventLoopGroup-3-20] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 13:18:00,839 ERROR P.producer  [nioEventLoopGroup-3-1] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 13:18:00,859 ERROR P.producer  [nioEventLoopGroup-3-2] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 13:18:00,873 ERROR P.producer  [nioEventLoopGroup-3-3] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 13:18:00,887 ERROR P.producer  [nioEventLoopGroup-3-4] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 13:18:00,900 ERROR P.producer  [nioEventLoopGroup-3-5] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 13:18:00,912 ERROR P.producer  [nioEventLoopGroup-3-6] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 13:18:00,924 ERROR P.producer  [nioEventLoopGroup-3-7] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 13:18:00,937 ERROR P.producer  [nioEventLoopGroup-3-8] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 13:18:00,951 ERROR P.producer  [nioEventLoopGroup-3-9] kafka.producer.ProducerClosedException: producer already closed
+2013-12-20 13:18:00,963 ERROR P.producer  [nioEventLoopGroup-3-10] kafka.producer.ProducerClosedException: producer already closed
