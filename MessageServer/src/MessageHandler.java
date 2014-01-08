@@ -38,7 +38,7 @@ public class MessageHandler extends ChannelInboundHandlerAdapter {
     public MessageHandler(String brokerList) {
         logger = LogManager.getLogger(MessageHandler.class.getName());
         this.brokerList = brokerList;
-        kafkaProducer = producerFactory.getProducer(brokerList,logger)   ;
+
     }
 
 
@@ -115,9 +115,11 @@ public class MessageHandler extends ChannelInboundHandlerAdapter {
         try {
 
             logger.info("starting channel read")   ;
+
             if (msg instanceof DefaultFullHttpRequest)
             //if (msg instanceof DefaultLastHttpContent  )
             {
+                kafkaProducer = producerFactory.getProducer(brokerList,logger)   ;
 
                 DefaultFullHttpRequest  in =    (DefaultFullHttpRequest )msg;
                 HttpPostRequestDecoder decoder = new HttpPostRequestDecoder(new DefaultHttpDataFactory(false),in);
@@ -148,6 +150,7 @@ public class MessageHandler extends ChannelInboundHandlerAdapter {
                 System.out.println(payload.getTopic() + ":" + payload.getMessage());
 
                 sendResponse(ctx,OK,serverMsg);
+                kafkaProducer.close();
 
 
             }
