@@ -7,8 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0854860a-87b8-4307-acae-96e5db7cb096" name="Default" comment="cleaned up dendencies">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KafkaProducer/KafkaProducer.iml" afterPath="$PROJECT_DIR$/KafkaProducer/KafkaProducer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Messages/Messages.iml" afterPath="$PROJECT_DIR$/Messages/Messages.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MessageListener.iws" />
@@ -103,10 +101,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MessageServer.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MessageServer.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MessageServer/src/MessageServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="20" selection-start="1994" selection-end="1994" vertical-scroll-proportion="0.0" vertical-offset="1190" max-vertical-offset="1598">
+            <state line="25" column="53" selection-start="806" selection-end="806" vertical-scroll-proportion="0.45857418" vertical-offset="0" max-vertical-offset="1309">
               <folding />
             </state>
           </provider>
@@ -121,10 +119,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TraceMessageTest.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TraceMessageTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Messages/tests/Messages/TraceMessageTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="24" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0655106" vertical-offset="0" max-vertical-offset="782">
+            <state line="2" column="24" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="782">
               <folding />
             </state>
           </provider>
@@ -235,8 +233,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="11" />
+    <option name="y" value="164" />
     <option name="width" value="1296" />
     <option name="height" value="698" />
   </component>
@@ -274,6 +272,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -366,7 +365,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -384,7 +382,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
     <property name="last_opened_file_path" value="C:/Dev/Lib/kafka_2.8.0-0.8.0-beta1/kafka_2.8.0-0.8.0-beta1.jar!/" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -785,6 +783,8 @@
       <workItem from="1388515693044" duration="643000" />
       <workItem from="1388517156024" duration="12000" />
       <workItem from="1388517186836" duration="116000" />
+      <workItem from="1388517943227" duration="224000" />
+      <workItem from="1388518259604" duration="265000" />
     </task>
     <task id="LOCAL-00001" summary="updates to netty response">
       <created>1384822779104</created>
@@ -870,7 +870,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61766000" />
+    <option name="totallyTimeSpent" value="62255000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -893,7 +893,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="698" extended-state="6" />
+    <frame x="11" y="164" width="1296" height="698" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1135,13 +1135,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MessageServer/src/MessageServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="20" selection-start="1994" selection-end="1994" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="1309">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NettyLib/src/HttpResponseHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="0" selection-start="351" selection-end="351" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
@@ -1221,9 +1214,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/KafkaProducer/src/Producer/producer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="20" selection-start="1224" selection-end="1224" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="1003">
-          <folding />
-        </state>
+        <state line="44" column="20" selection-start="1224" selection-end="1224" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="1003" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/KafkaProducer/tests/Producer/SimplePartitionerTest.java">
@@ -1242,7 +1233,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Messages/tests/Messages/TraceMessageTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="24" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0655106" vertical-offset="0" max-vertical-offset="782">
+        <state line="2" column="24" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="782">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MessageServer/src/MessageServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="53" selection-start="806" selection-end="806" vertical-scroll-proportion="0.45857418" vertical-offset="0" max-vertical-offset="1309">
           <folding />
         </state>
       </provider>
