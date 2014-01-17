@@ -16,18 +16,21 @@ import java.util.Properties;
 
 
 public class producerTest {
-  // @Ignore("Only run this when kafka is running")
+   @Ignore("Only run this when kafka is running")
     @Test
     public void testTrace() throws Exception {
 
 
+
         Logger logger= LogManager.getLogger() ;
         Properties defaultProps = new Properties();
-        InputStream in = this.getClass().getResourceAsStream("app.properties");
-        defaultProps.load(in);
+        defaultProps.setProperty("metadata.broker.list","localhost:9092,localhost:9093");
+        defaultProps.setProperty("port","1");
         String brokers = defaultProps.getProperty("metadata.broker.list")  ;
         IProducer p = producerFactory.getProducer(brokers,logger)  ;
         MessageFactory mf = new MessageFactory();
+
+
 
 
         for (Integer i=0;i<10;i++)

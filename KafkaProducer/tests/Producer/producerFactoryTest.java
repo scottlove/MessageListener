@@ -18,8 +18,9 @@ public class producerFactoryTest {
 
         Logger logger= LogManager.getLogger()  ;
         Properties defaultProps = new Properties();
-        FileInputStream in = new FileInputStream("app.properties")      ;
-        defaultProps.load(in);
+
+        defaultProps.setProperty("metadata.broker.list","localhost:9092,localhost:9093");
+        defaultProps.setProperty("port","1");
         String brokers = defaultProps.getProperty("metadata.broker.list")  ;
         IProducer p = producerFactory.getProducer(brokers,logger)  ;
         KeyedMessage<String, String> data = p.buildKeyedMessage("Test", "123", "message")     ;
